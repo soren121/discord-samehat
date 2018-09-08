@@ -1,19 +1,15 @@
-const Discord = require('discord.io');
+const { Client, Attachment } = require('discord.js');
+const client = new Client();
 
-const bot = new Discord.Client({
-    autorun: true,
-    token: ""
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
-bot.on('ready', function(event) {
-    console.log('Logged in as %s - %s\n', bot.username, bot.id);
-});
-
-bot.on('message', function(user, userID, channelID, message, event) {
-    if (message.toLowerCase() === "same hat") {
-        bot.uploadFile({
-            to: channelID,
-            file: "same_hat.png"
-        });
+client.on('message', msg => {
+    if (msg.content.toLowerCase() === 'same hat') {
+        const attachment = new Attachment("same_hat.png");
+        msg.channel.send(attachment);
     }
 });
+
+client.login('');
