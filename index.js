@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (re.match(msg.content) !== null) {
+    if (msg.content.match(re) !== null) {
         const attachment = new Attachment("same_hat.png");
         msg.channel.send(attachment);
     }
