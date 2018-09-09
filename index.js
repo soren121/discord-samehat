@@ -1,7 +1,7 @@
 const { Client, Attachment } = require('discord.js');
 const client = new Client();
 
-const re = /(same hat)(?![0-9A-Za-z_])/i;
+const re = /\b(same hat)(?![0-9A-Za-z_])/i;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
