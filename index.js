@@ -1,5 +1,5 @@
-const { Client } = require('discord.js');
-const client = new Client();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
 const re = /\b(same hat)(?![0-9A-Za-z_])/i;
 
